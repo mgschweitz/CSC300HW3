@@ -11,10 +11,12 @@ public class Main
 //		int numWords = CSC300HW4.uniqueSubStringCount(str, key);
 //		System.out.println("The number of times '" + key + "' occurs is: " + numWords);
 		
-		int[][] borger = {{1,  2, 3, 4},
-		           {5,  6, 7, 8},
-		           {9, 10,11,12}};
+//		int[][] borger = {{1,  2, 3, 4},
+//		           {5,  6, 7, 8},
+//		           {9, 10,11,12}};
+//		
+//		System.out.println("The key given to me was found here: " + CSC300HW5.searchY(borger, 10));
 		
-		System.out.println("The key given to me was found here: " + CSC300HW5.searchY(borger, 10));
+		CSC300BibleHW1.howLongToMakeDisciples();
 	}
 }

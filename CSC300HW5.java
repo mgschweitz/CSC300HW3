@@ -1,25 +1,25 @@
 
 public class CSC300HW5 
 {
-	public static int searchX(int[] arr, int key)
+	public static int searchX(int[] array, int key)
 	    {
 	        int lowest = 0;
-	        int highest = arr.length;
+	        int highest = array.length;
 	        int middle = (lowest + highest) /2;
 
 	        while (true) 
 	        {
 
-	            if (arr[middle] > key)
+	            if (array[middle] > key)
 	            {
 	                highest = middle -1;
 	                middle = (lowest + highest) /2;
 	            }
-	            else if (arr[middle] < key)
+	            else if (array[middle] < key)
 	            {
 	                lowest = middle +1;
 	                middle = (lowest + highest) /2;
-	            } else if (arr[middle] == key)
+	            } else if (array[middle] == key)
 	            {
 	                return middle;
 	            }
@@ -30,29 +30,29 @@ public class CSC300HW5
 
 	        }
 	    }
-	public static String searchY(int[][] arrY, int key)
+	public static String searchY(int[][] array2, int key)
 	    {
 	        int lowest = 0;
-	        int highest = arrY.length;
+	        int highest = array2.length;
 	        int middle = (lowest + highest) /2;
 	        int innerCord = 0;
 
 
 	        while (true) 
 	        {
-	            if (arrY[middle][0] > key) 
+	            if (array2[middle][0] > key) 
 	            {
 	                highest = middle -1;
 	                middle = (lowest + highest) /2;
 	            }
-	            else if (arrY[middle][arrY[middle].length-1] < key) 
+	            else if (array2[middle][array2[middle].length-1] < key) 
 	            {
 	                lowest = middle +1;
 	                middle = (lowest + highest) /2;
 	            }
 	            else
 	            {
-	                innerCord = searchX(arrY[middle], key);
+	                innerCord = searchX(array2[middle], key);
 
 	                return (middle +", " + innerCord);
 	            }
