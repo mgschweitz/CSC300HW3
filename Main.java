@@ -17,6 +17,6 @@ public class Main
 //		
 //		System.out.println("The key given to me was found here: " + CSC300HW5.searchY(borger, 10));
 		
-		CSC300BibleHW1.howLongToMakeDisciples();
+//		CSC300BibleHW1.howLongToMakeDisciples();
 	}
 }

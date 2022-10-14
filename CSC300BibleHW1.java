@@ -9,7 +9,7 @@ public class CSC300BibleHW1
 		
 		while(trueDisciples < population)
 		{
-			trueDisciples += (trueDisciples*3);
+			trueDisciples += (trueDisciples*2);
 			years++;
 		}
 		System.out.println("It took " + (years*3) + " years to convert the world to Christianity.");
