@@ -1,9 +1,38 @@
-/*
+
 public class SlowSortMain 
 {
-
+	public static void shuffle(int [] arr) 
+	{
+        for (int i = 0; i < arr.length; i++) 
+        {
+            int index = (int) (Math.random() * arr.length);
+            int temp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = temp;
+        }
+    }
+            
 	public static void main(String[] args) 
 	{
+		
+		int[] masterList = new int[10000];
+        for (int i = 0; i < masterList.length; i++)
+        {
+            masterList[i] = i+1;
+            System.out.print(masterList[i] + " ");
+        }
+        shuffle(masterList);
+        System.out.println("\n=-=-=-=-=-=-=-=-\n");
+
+        
+        for (int i = 0; i < masterList.length; i++)
+        {
+            System.out.print(masterList[i] + " ");
+        }
+        System.out.println("\n=-=-=-=-=-=-=-=-\n");
+        
+//-----------------------------------------------------------------------------------------
+		
 		BubbleSort x = new BubbleSort();
 		int bubbleArray[] = {88, 44, 66, 22, 33, 99, 11, 55, 77};
 		x.bubbleSort(bubbleArray);
@@ -27,7 +56,8 @@ public class SlowSortMain
 		a.shellSort(shellArray);
 		System.out.println("Sorted Shell Array");
 		a.printShellArray(shellArray);
+		
+		
 	}
 
 }
-*/
