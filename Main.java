@@ -84,7 +84,19 @@ public class Main
       
       dlist.traverse();
       
-      dlist.head = dlist.SelectionSort(dlist.head);
+      dlist.head = dlist.BubbleSort(dlist.head);
+      
+      dlist.traverse();
+      
+      dlist.append(3);
+      
+      dlist.append(4);
+      
+      dlist.insertAt(6, 0);
+      
+      dlist.traverse();
+      
+      dlist.head = dlist.BubbleSort(dlist.head);
       
       dlist.traverse();
 	}

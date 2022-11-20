@@ -188,43 +188,37 @@ public class LinkedListDouble
         System.out.println(output);
     }
     
-    public DNode SelectionSort(DNode head) //recursively 
+    public DNode BubbleSort(DNode head) //recursively 
     {
-        if(head.next == null)
+        int swapped, i;
+        DNode ptr1;
+        DNode lptr = null;
+        
+        if(head == null)
         {
-//            System.out.println("===== List is empty or end of list reached =====");
-            return head;
+        	return null;
         }
         
-        DNode minNode = head;
-        DNode preNode = null;
-        DNode i = null;
-        for(i = head; i.next != null; i = i.next)
+        do
         {
-            if(i.next.payload < minNode.payload)
-            {
-                minNode = i.next;
-                preNode = i;
-            }
+        	swapped = 0;
+        	ptr1 = head;
+        	
+        	while(ptr1.next != lptr)
+        	{
+        		if(ptr1.payload > ptr1.next.payload)
+        		{
+        			int t = ptr1.payload;
+        			ptr1.payload = ptr1.next.payload;
+        			ptr1.next.payload = t;
+        			swapped = 1;
+        		}
+        		ptr1 = ptr1.next;
+        	}
+        	lptr = ptr1.next;
         }
-        
-        if(minNode != head) //swap nodes
-        {
-            if(minNode.next != null) //for double linked lists
-            {
-                minNode.next.prev = preNode; //double
-                head.prev = minNode; //double
-            }
-            
-            preNode.next = minNode.next;
-            minNode.next = head;
-            head = minNode;
-            
-        }
-        
-        head.next = SelectionSort(head.next);
-        
-        return head;
+        while(swapped != 0);
+        	return head;
     }
 }
 
