@@ -1,10 +1,10 @@
 
 class QuickSort
 {
-	int partition(int[] numbers, int startIndex, int endIndex) {
+	public static int partition(int[] quickNumbers, int startIndex, int endIndex) {
 
 		   int midpoint = startIndex + (endIndex - startIndex) / 2;
-		   int pivot = numbers[midpoint];
+		   int pivot = quickNumbers[midpoint];
 
 		   int low = startIndex;
 		   int high = endIndex;
@@ -12,10 +12,10 @@ class QuickSort
 		   boolean done = false;
 		   while (!done) {
 
-		      while (numbers[low] < pivot) {
+		      while (quickNumbers[low] < pivot) {
 		         low = low + 1;
 		      }
-		      while (pivot < numbers[high]) {
+		      while (pivot < quickNumbers[high]) {
 		         high = high - 1;
 		      }
 		      
@@ -23,9 +23,9 @@ class QuickSort
 		         done = true;
 		      }
 		      else {
-		         int temp = numbers[low];
-		         numbers[low] = numbers[high];
-		         numbers[high] = temp;
+		         int temp = quickNumbers[low];
+		         quickNumbers[low] = quickNumbers[high];
+		         quickNumbers[high] = temp;
 		         low++;
 		         high--;
 		      }
@@ -34,16 +34,16 @@ class QuickSort
 		   return high;
 		}
 	
-	void quicksort(int[] numbers, int startIndex, int endIndex) {
+	public static void quicksort(int[] quickNumbers, int startIndex, int endIndex) {
 
 		   if (endIndex <= startIndex) {
 		      return;
 		   }
 
-		   int high = partition(numbers, startIndex, endIndex);
+		   int high = partition(quickNumbers, startIndex, endIndex);
 
-		   quicksort(numbers, startIndex, high);
+		   quicksort(quickNumbers, startIndex, high);
 
-		   quicksort(numbers, high + 1, endIndex);
+		   quicksort(quickNumbers, high + 1, endIndex);
 		}
 }
