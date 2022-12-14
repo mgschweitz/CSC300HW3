@@ -62,9 +62,9 @@ public class SlowSortMain
       int[] masterListSeven = new int[10000];
       for(int e = 0; e < masterListSeven.length; e++)
       {
-      	masterListSix[e] = e+1;
+      	masterListSeven[e] = e+1;
       }
-      shuffle(masterListSix);
+      shuffle(masterListSeven);
 //-----------------------------------------------------------------------------------------
 		
 		BubbleSort x = new BubbleSort();
@@ -119,13 +119,14 @@ public class SlowSortMain
 	    System.out.println("Quick Sort lasted for " + (System.currentTimeMillis() - timeQuickStarted) + " milliseconds");
 		System.out.println("");
 		
-		int[] arrayMergeTwo = masterListSeven;
+		int arr[] = masterListSeven;
 		long timeMergeTwoStarted = System.currentTimeMillis();
-		System.out.println("Second kind of MergeSort: ");
-		MergeSortTwo.mergeSortTwo(arrayMergeTwo);
-		System.out.println("SORTED: " + Arrays.toString(arrayMergeTwo));
-		System.out.println("The new MergeSort lasted for: " + (System.currentTimeMillis() - timeMergeTwoStarted) + " milliseconds");
-		System.out.println("");
+	    System.out.println("MergeTwo: ");
+	    MergeTwo ob = new MergeTwo();
+	    ob.sort(arr, 0, arr.length-1);
+        MergeTwo.printArray(arr);
+        System.out.println("MergeTwo lasted for " + (System.currentTimeMillis() - timeMergeTwoStarted) + " milliseconds");
+        System.out.println("");
 	}
 
 }
